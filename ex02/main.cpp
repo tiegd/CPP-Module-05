@@ -11,23 +11,19 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-	try
-	{
-		Bureaucrat	no_1("jweber", 60);
-		std::cout << no_1 << std::endl;
-		Bureaucrat	no_2(no_1);
-		std::cout << no_2 << std::endl;
-		for (int i = 0; i < 70; i++)
-			no_1.increment();
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-		return 1;
-	}
-	
+	Bureaucrat	no_1("jweber", 60);
+	std::cout << no_1 << "\n" << std::endl;
+	Bureaucrat	no_2("jpiquet", 90);
+	std::cout << no_2 << "\n" << std::endl;
+	Form	form_01("Form", 70, 20);
+	std::cout << form_01 << "\n" << std::endl;
+	form_01.signForm(no_2);
+	std::cout << form_01 << "\n" << std::endl;
+	form_01.signForm(no_1);
+	std::cout << form_01 << "\n" << std::endl;
 }
 

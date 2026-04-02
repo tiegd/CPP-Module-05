@@ -17,6 +17,8 @@
 #include <exception>
 #include <iostream>
 
+class AForm;
+
 class Bureaucrat
 {
 	private:
@@ -42,6 +44,7 @@ class Bureaucrat
 			public:
 				virtual const char* what() const throw();
 		};
+		void executeForm(AForm const &form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
