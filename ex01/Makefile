@@ -6,7 +6,7 @@ CXXFLAGS = -Wall -Wextra -Werror -MD -std=c++98
 
 BIN = bin/
 			
-SRC =	main.cpp Bureaucrat.cpp	\
+SRC =	main.cpp Bureaucrat.cpp Form.cpp	\
 
 OBJ = $(SRC: .cpp=.o)
 OBJ := $(addprefix $(BIN), $(SRC:.cpp=.o))

@@ -17,9 +17,8 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 {
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj)
+Bureaucrat::Bureaucrat(const Bureaucrat &obj) : _name(obj._name), _grade(obj._grade)
 {
-	*this = obj;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
@@ -68,12 +67,12 @@ void Bureaucrat::decrement()
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade to low");
+	return ("Bureaucrat's grade to low");
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade to high");
+	return ("Bureaucrat's grade to high");
 }
 
 std::ostream &operator<<(std::ostream& os, const Bureaucrat &obj)
