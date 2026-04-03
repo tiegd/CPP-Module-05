@@ -58,12 +58,12 @@ void Form::signForm(Bureaucrat &obj)
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade to high");
+	return ("Grade too high");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade to low for sign");
+	return ("Grade too low for sign");
 }
 
 std::string Form::getName() const

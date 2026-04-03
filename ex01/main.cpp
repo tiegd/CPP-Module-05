@@ -19,7 +19,7 @@ int main()
 	std::cout << no_1 << "\n" << std::endl;
 	Bureaucrat	no_2("jpiquet", 90);
 	std::cout << no_2 << "\n" << std::endl;
-	Form	form_01("Formulaire 2042", 70, 20);
+	Form	form_01("Form", 70, 20);
 	std::cout << form_01 << "\n" << std::endl;
 	form_01.signForm(no_2);
 	std::cout << form_01 << "\n" << std::endl;

@@ -58,12 +58,22 @@ void AForm::signForm(Bureaucrat &obj)
 
 const char* AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade to high");
+	return ("Grade too high");
 }
 
 const char* AForm::GradeTooLowException::what() const throw()
 {
-	return ("Grade to low for sign");
+	return ("Grade too low for sign");
+}
+
+const char* AForm::FormUnsignedException::what() const throw()
+{
+	return ("The form is not signed");
+}
+
+const char* AForm::GradeTooLowExecutException::what() const throw()
+{
+	return ("Grade too low for execut");
 }
 
 std::string AForm::getName() const

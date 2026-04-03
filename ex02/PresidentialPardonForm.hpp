@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ROBOTOM__
-#define __ROBOTOM__
+#ifndef __PRESIDENTIAL__
+#define __PRESIDENTIAL__
 
 #include "AForm.hpp"
 

@@ -27,7 +27,7 @@ class AForm
 	public:
 		AForm();
 		AForm(const AForm &obj);
-		~AForm();
+		virtual ~AForm();
 		AForm(std::string name, int gradeToSing, int gradeToExecut);
 		class GradeTooHighException : public std::exception
 		{
@@ -38,6 +38,18 @@ class AForm
 		{
 			public:
 				virtual const char* what() const throw();
+		};
+		class FormUnsignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+
+		};
+		class GradeTooLowExecutException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+
 		};
 		void beSigned(Bureaucrat &obj);
 		void signForm(Bureaucrat &obj);
