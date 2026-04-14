@@ -81,3 +81,7 @@ std::ostream &operator<<(std::ostream& os, const Bureaucrat &obj)
 	return (os);
 }
 
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	form.execute();
+}
