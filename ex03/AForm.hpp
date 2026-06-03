@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:24 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 14:40:22 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:53:02 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FORM__
-#define __FORM__
+#ifndef __AFORM__
+#define __AFORM__
 
 #include <string>
 #include "Bureaucrat.hpp"
 
-class Form
+class AForm
 {
-	private:
+	protected:
 		const std::string	_name;
 		bool			_signed;
 		const int		_gradeToSign;
 		const int		_gradeToExecut;
-		Form& operator=(const Form &obj);
+		AForm& operator=(const AForm &obj);
 	public:
-		Form();
-		Form(const Form &obj);
-		~Form();
-		Form(std::string name, int gradeToSing, int gradeToExecut);
+		AForm();
+		AForm(const AForm &obj);
+		virtual ~AForm();
+		AForm(std::string name, int gradeToSing, int gradeToExecut);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -39,14 +39,40 @@ class Form
 			public:
 				virtual const char* what() const throw();
 		};
+		class FormUnsignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+
+		};
+		class GradeTooLowExecutException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+
+		};
+		class AlreadySignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+
+		};
 		void beSigned(Bureaucrat &obj);
 		void signForm(Bureaucrat &obj);
 		std::string getName() const;
 		bool getIsSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExe() const;
+		virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
-std::ostream &operator<<(std::ostream &os, const Form &obj);
+std::ostream &operator<<(std::ostream &os, const AForm &obj);
 
 #endif
+
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define PURPLE  "\033[35m"
+#define RESET   "\033[0m"
