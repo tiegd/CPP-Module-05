@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
@@ -73,6 +74,20 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Bureaucrat's grade too high");
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << RED << this->_name << " couldn’t execute " << form.getName() << " because " << e.what() << RESET << std::endl;
+	}
+
 }
 
 std::ostream &operator<<(std::ostream& os, const Bureaucrat &obj)

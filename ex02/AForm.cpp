@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaducurt <gaducurt@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:17 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/04/02 13:28:55 by gaducurt         ###   ########lyon.fr   */
+/*   Updated: 2026/06/03 11:12:42 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void AForm::signForm(Bureaucrat &obj)
 	try
 	{
 		this->beSigned(obj);
-		std::cout << obj.getName() << " signed " << this->_name << std::endl;
+		std::cout << GREEN << obj.getName() << " signed " << this->_name << RESET << std::endl;
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << std::endl;
+		std::cerr << RED << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << RESET << std::endl;
 	}
 }
 

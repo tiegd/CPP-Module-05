@@ -35,7 +35,7 @@ re: fclean all
 
 debug:
 	@$(MAKE) $(NAME)
-CXXFLAGS="$(CXXFLAGSDEBUG)"
+# CXXFLAGS="$(CXXFLAGSDEBUG)"
 
 .PHONY: all clean fclean re debug
 
