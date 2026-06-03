@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:45:08 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 11:44:22 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/03 14:54:04 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		throw GradeTooLowExecutException();
 	std::srand(std::time(0));
     if (std::rand() % 2 == 0)
-		std::cout << "Bbrrrr, " << _target << " has been robotomized" << std::endl;
+		std::cout << BLUE << "Bbrrrr, " << _target << " has been robotomized" << RESET << std::endl;
 	else
-		std::cout << "Robotomy of " << _target << " has been failed" << std::endl;
+		std::cout << BLUE << "Robotomy of " << _target << " has been failed" << RESET << std::endl;
 }

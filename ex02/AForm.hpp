@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:24 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 10:37:00 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/03 14:54:13 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,16 @@ class AForm
 				virtual const char* what() const throw();
 
 		};
+		class AlreadySignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+
+		};
 		void beSigned(Bureaucrat &obj);
 		void signForm(Bureaucrat &obj);
 		std::string getName() const;
-		std::string getStatus() const;
+		bool getIsSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExe() const;
 		virtual void execute(Bureaucrat const &executor) const = 0;

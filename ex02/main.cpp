@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 15:12:45 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 11:54:12 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/03 14:25:24 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main()
 	AForm* form_06 = new RobotomyRequestForm("Dolores");
 
 	form_01->signForm(no_1);
+	form_01->signForm(no_2);
 	form_02->signForm(no_1);
 	form_03->signForm(no_1);
 	std::cout << std::endl;

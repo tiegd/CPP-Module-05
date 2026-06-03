@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:17 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 11:12:42 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/03 14:53:47 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void AForm::beSigned(Bureaucrat &obj)
 {
 	if (obj.getGrade() <= this->_gradeToSign)
 		this->_signed = true;
+	else if (getIsSigned())
+		throw AlreadySignedException();
 	else
 		throw GradeTooLowException();
 }
@@ -48,11 +50,11 @@ void AForm::signForm(Bureaucrat &obj)
 	try
 	{
 		this->beSigned(obj);
-		std::cout << GREEN << obj.getName() << " signed " << this->_name << RESET << std::endl;
+		std::cout << obj.getName() << " signed " << this->_name << std::endl;
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << RED << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << RESET << std::endl;
+		std::cerr << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << std::endl;
 	}
 }
 
@@ -76,16 +78,21 @@ const char* AForm::GradeTooLowExecutException::what() const throw()
 	return ("Grade too low for execut");
 }
 
+const char* AForm::AlreadySignedException::what() const throw()
+{
+	return ("The form is already signed");
+}
+
 std::string AForm::getName() const
 {
 	return (this->_name);
 }
 
-std::string AForm::getStatus() const //checker avec un bool en retour
+bool AForm::getIsSigned() const
 {
 	if (this->_signed)
-		return ("true");
-	return ("false");
+		return (true);
+	return (false);
 }
 
 int AForm::getGradeToSign() const
@@ -100,7 +107,7 @@ int AForm::getGradeToExe() const
 
 std::ostream& operator<<(std::ostream &os, const AForm &obj)
 {
-	os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed:" << obj.getStatus();
+	os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed:" << obj.getIsSigned();
 	return (os);
 }
 
