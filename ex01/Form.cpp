@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:17 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:18:34 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:31:57 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,6 @@ void Form::beSigned(Bureaucrat &obj)
 		throw GradeTooLowException();
 }
 
-void Form::signForm(Bureaucrat &obj)
-{
-	try
-	{
-		this->beSigned(obj);
-		std::cout << obj.getName() << " signed " << this->_name << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << std::endl;
-	}
-}
-
 const char* Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high");
@@ -88,7 +75,10 @@ int Form::getGradeToExe() const
 
 std::ostream& operator<<(std::ostream &os, const Form &obj)
 {
-	os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed:" << obj.getIsSigned();
+	if (obj.getIsSigned())
+		os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed: true" << std::endl;
+	else
+		os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed: false" << std::endl;
 	return (os);
 }
 

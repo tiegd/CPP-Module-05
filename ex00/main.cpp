@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 15:12:45 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:18:25 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 11:49:48 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int main()
 		std::cout << e.what() << std::endl;
 		return 1;
 	}
-	
+	return 0;
 }
 

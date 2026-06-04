@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaducurt <gaducurt@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 13:27:45 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/03/20 13:27:49 by gaducurt         ###   ########lyon.fr   */
+/*   Updated: 2026/06/04 13:31:30 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
@@ -75,9 +76,22 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 	return ("Bureaucrat's grade too high");
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << getName() << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
 std::ostream &operator<<(std::ostream& os, const Bureaucrat &obj)
 {
-	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << "." << std::endl;
 	return (os);
 }
 

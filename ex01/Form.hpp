@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:24 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:15:39 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:31:49 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ class Form
 				virtual const char* what() const throw();
 		};
 		void 		beSigned(Bureaucrat &obj);
-		void		signForm(Bureaucrat &obj);
 		std::string	getName() const;
 		bool		getIsSigned() const;
 		int			getGradeToSign() const;

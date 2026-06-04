@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:24 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:36:24 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:19:19 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class AForm
 {
-	protected:
+	private:
 		const std::string	_name;
 		bool				_signed;
 		const int			_gradeToSign;
@@ -58,11 +58,11 @@ class AForm
 
 		};
 		void			beSigned(Bureaucrat &obj);
-		void			signForm(Bureaucrat &obj);
 		std::string		getName() const;
 		bool			getIsSigned() const;
 		int				getGradeToSign() const;
 		int				getGradeToExe() const;
+		void			setSign(bool val);
 		virtual void	execute(Bureaucrat const &executor) const = 0;
 };
 

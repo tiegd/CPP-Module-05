@@ -6,14 +6,13 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:45:29 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 11:49:24 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:26:49 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
 #include <fcntl.h>
-// #include <iostream>
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
@@ -28,7 +27,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) :
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &obj)
 {
 	if (this != &obj)
-		this->_signed = obj._signed;
+		setSign(obj.getIsSigned());
 	return (*this);
 }
 
@@ -43,9 +42,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubb
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (this->_signed == false)
+	if (this->getIsSigned() == false)
 		throw FormUnsignedException();
-	if (this->_gradeToExecut <= executor.getGrade())
+	if (this->getGradeToExe() <= executor.getGrade())
 		throw GradeTooLowExecutException();
 	std::string name = _target + "_shrubbery";
 	std::ofstream file;

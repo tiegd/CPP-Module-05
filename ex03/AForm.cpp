@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:17 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:18:56 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:19:12 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,6 @@ void AForm::beSigned(Bureaucrat &obj)
 		throw AlreadySignedException();
 	else
 		throw GradeTooLowException();
-}
-
-void AForm::signForm(Bureaucrat &obj)
-{
-	try
-	{
-		this->beSigned(obj);
-		std::cout << obj.getName() << " signed " << this->_name << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << std::endl;
-	}
 }
 
 const char* AForm::GradeTooHighException::what() const throw()
@@ -105,9 +92,16 @@ int AForm::getGradeToExe() const
 	return (this->_gradeToExecut);
 }
 
-std::ostream& operator<<(std::ostream &os, const AForm &obj)
+void AForm::setSign(bool val)
 {
-	os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed:" << obj.getIsSigned();
-	return (os);
+	_signed = val;
 }
 
+std::ostream& operator<<(std::ostream &os, const AForm &obj)
+{
+	if (obj.getIsSigned())
+		os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed: true" << std::endl;
+	else
+		os << "name: " << obj.getName() << "\ngrade to sign:" << obj.getGradeToSign() << "\ngrade to execut:" << obj.getGradeToExe() << "\nis signed: false" << std::endl;
+	return (os);
+}

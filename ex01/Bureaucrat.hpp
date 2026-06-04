@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:35:36 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:15:48 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:26:18 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <exception>
 #include <iostream>
+
+class Form;
 
 class Bureaucrat
 {
@@ -42,6 +44,7 @@ class Bureaucrat
 			public:
 				virtual const char* what() const throw();
 		};
+		void		signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);

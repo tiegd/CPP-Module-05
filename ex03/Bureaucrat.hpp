@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:35:36 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:36:48 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:34:39 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class Bureaucrat
 			public:
 				virtual const char* what() const throw();
 		};
+		void		signForm(AForm &form);
 		void		executeForm(AForm const &form) const;
 };
 

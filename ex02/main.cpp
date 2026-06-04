@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 15:12:45 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 16:01:40 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:38:45 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int main()
 	AForm* form_05 = new ShrubberyCreationForm("Bill");
 	AForm* form_06 = new RobotomyRequestForm("Dolores");
 
-	form_01->signForm(no_1);
-	form_01->signForm(no_2);
-	form_02->signForm(no_1);
-	form_03->signForm(no_1);
+	no_1.signForm(*form_01);
+	no_2.signForm(*form_01);
+	no_1.signForm(*form_02);
+	no_1.signForm(*form_03);
 	std::cout << std::endl;
-	form_04->signForm(no_2);
-	form_05->signForm(no_2);
-	form_06->signForm(no_2);
+	no_2.signForm(*form_04);
+	no_2.signForm(*form_05);
+	no_2.signForm(*form_06);
 	
 	std::cout << std::endl;
 	no_1.executeForm(*form_01);
@@ -54,4 +54,5 @@ int main()
 	delete form_04;
 	delete form_05;
 	delete form_06;
+	return 0;
 }

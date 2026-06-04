@@ -76,6 +76,19 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 	return ("Bureaucrat's grade too high");
 }
 
+void Bureaucrat::signForm(AForm &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << getName() << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
 void Bureaucrat::executeForm(AForm const &form) const
 {
 	try
@@ -92,7 +105,6 @@ void Bureaucrat::executeForm(AForm const &form) const
 
 std::ostream &operator<<(std::ostream& os, const Bureaucrat &obj)
 {
-	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << "." << std::endl;
 	return (os);
 }
-

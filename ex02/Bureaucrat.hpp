@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:35:36 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 11:26:12 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:33:49 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ class Bureaucrat
 			public:
 				virtual const char* what() const throw();
 		};
-		void executeForm(AForm const &form) const;
+		void		signForm(AForm &form);
+		void 		executeForm(AForm const &form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);

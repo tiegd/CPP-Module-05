@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaducurt <gaducurt@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 13:27:45 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/03/20 13:27:49 by gaducurt         ###   ########lyon.fr   */
+/*   Updated: 2026/06/04 11:46:46 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 
 std::ostream &operator<<(std::ostream& os, const Bureaucrat &obj)
 {
-	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << "." << std::endl;
 	return (os);
 }
 

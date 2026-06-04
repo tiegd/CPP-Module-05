@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:44:34 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 14:43:40 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:26:40 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &obj)
 {
 	if (this != &obj)
-		this->_signed = obj._signed;
+		setSign(obj.getIsSigned());
 	return (*this);
 }
 
@@ -41,9 +41,9 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if (this->_signed == false)
+	if (this->getIsSigned() == false)
 		throw FormUnsignedException();
-	if (this->_gradeToExecut <= executor.getGrade())
+	if (this->getGradeToExe() <= executor.getGrade())
 		throw GradeTooLowExecutException();
 	std::cout << YELLOW << _target << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
 }
