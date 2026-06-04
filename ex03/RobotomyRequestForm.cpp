@@ -6,14 +6,11 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:45:08 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 14:54:04 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 11:39:26 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-#include "AForm.hpp"
-// #include <fcntl.h>
-// #include <bits/stdc++.h>
 #include <cstdlib>
 #include <ctime>
 

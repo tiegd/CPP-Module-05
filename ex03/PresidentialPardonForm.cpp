@@ -6,13 +6,11 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:44:34 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 14:43:40 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 11:39:03 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-#include "AForm.hpp"
-#include <fcntl.h>
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {

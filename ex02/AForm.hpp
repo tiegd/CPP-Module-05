@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:24 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 14:54:13 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 11:25:47 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class AForm
 {
 	protected:
 		const std::string	_name;
-		bool			_signed;
-		const int		_gradeToSign;
-		const int		_gradeToExecut;
+		bool				_signed;
+		const int			_gradeToSign;
+		const int			_gradeToExecut;
 		AForm& operator=(const AForm &obj);
 	public:
 		AForm();
@@ -57,13 +57,13 @@ class AForm
 				virtual const char* what() const throw();
 
 		};
-		void beSigned(Bureaucrat &obj);
-		void signForm(Bureaucrat &obj);
-		std::string getName() const;
-		bool getIsSigned() const;
-		int getGradeToSign() const;
-		int getGradeToExe() const;
-		virtual void execute(Bureaucrat const &executor) const = 0;
+		void			beSigned(Bureaucrat &obj);
+		void			signForm(Bureaucrat &obj);
+		std::string		getName() const;
+		bool			getIsSigned() const;
+		int				getGradeToSign() const;
+		int				getGradeToExe() const;
+		virtual void	execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const AForm &obj);
@@ -74,5 +74,4 @@ std::ostream &operator<<(std::ostream &os, const AForm &obj);
 #define GREEN   "\033[32m"
 #define YELLOW  "\033[33m"
 #define BLUE    "\033[34m"
-#define PURPLE  "\033[35m"
 #define RESET   "\033[0m"

@@ -6,14 +6,11 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:45:29 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 11:49:24 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 11:39:47 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include "AForm.hpp"
-#include <fcntl.h>
-// #include <iostream>
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)

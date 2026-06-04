@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 15:12:17 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/03 14:40:17 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/06/04 11:18:34 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void Form::signForm(Bureaucrat &obj)
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << std::endl;
+		std::cout << obj.getName() << " couldn’t sign " << this->_name << " because " << e.what() << std::endl;
 	}
 }
 
