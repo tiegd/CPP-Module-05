@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:45:29 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/06/04 16:26:49 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/07/08 12:19:28 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	std::string name = _target + "_shrubbery";
 	std::ofstream file;
 	file.open(name.c_str());
-	file << "       _-_\n    /~~   ~~\'" << "\n /~~         ~~\\" << '\n' << "{               }" << '\n' << " \\  _-     -_  /\n   ~  \\ //  ~\n_- -   | | _- _\n  _ -  | |   -_\n      // \\";
+	file << "       _-_\n    /~~   ~~\'" << "\n /~~         ~~\\" << '\n' << "{               }" << '\n' << " \\  _-     -_  /\n   ~  \\ //  ~\n_- -   | | _- _\n  _ -  | |   -_\n      // \\\n\n";
+	file << "       _-_\n    /~~   ~~\'" << "\n /~~         ~~\\" << '\n' << "{               }" << '\n' << " \\  _-     -_  /\n   ~  \\ //  ~\n_- -   | | _- _\n  _ -  | |   -_\n      // \\\n\n";
 	file.close();
 }
